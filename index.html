@@ -14,6 +14,13 @@
     <style>
       /* Nudge nav links down + spread them out */
       header nav { top: 60px !important; gap: 72px !important; }
+      /* The nav has an inline display:flex/position:absolute style that
+         ignores its own "hidden md:flex" responsive classes, so the full
+         desktop nav was rendering (and overflowing) on mobile too. Force
+         it hidden below the md breakpoint - !important beats inline styles. */
+      @media (max-width: 767px) {
+        header nav { display: none !important; }
+      }
     </style>
   </head>
   <body>
