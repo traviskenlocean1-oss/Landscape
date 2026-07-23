@@ -20,6 +20,12 @@
          it hidden below the md breakpoint - !important beats inline styles. */
       @media (max-width: 767px) {
         header nav { display: none !important; }
+        /* "Give Your Property..." split section is hardcoded to an inline
+           50/50 flex row with no responsive handling, so the text column
+           is squeezed to ~half the phone width and its words get clipped.
+           Stack it vertically on mobile instead. */
+        section[style*="min-height: 600px"] { flex-direction: column !important; height: auto !important; }
+        section[style*="min-height: 600px"] > div[style*="flex: 0 0 50%"] { flex: 1 1 100% !important; width: 100% !important; }
       }
     </style>
   </head>
