@@ -25,7 +25,8 @@
            is squeezed to ~half the phone width and its words get clipped.
            Stack it vertically on mobile instead. */
         section[style*="min-height: 600px"] { flex-direction: column !important; height: auto !important; }
-        section[style*="min-height: 600px"] > div[style*="flex: 0 0 50%"] { flex: 1 1 100% !important; width: 100% !important; }
+        section[style*="min-height: 600px"] > div[style*="flex: 0 0 50%"] { flex: 1 1 100% !important; width: 100% !important; box-sizing: border-box !important; padding-left: 24px !important; padding-right: 24px !important; }
+        html, body { overflow-x: clip; }
       }
     </style>
   </head>
